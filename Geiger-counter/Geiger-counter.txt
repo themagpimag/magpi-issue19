@@ -1,0 +1,68 @@
+When I got my Raspberry Pi, I had no exact idea what to do with it. But I have to admit, I accumulated a lot of electronic garbage stuff on my desk, gathering dust. Wait… The Raspberry does not deserve such treatment… The adventure starts with the EL screen on the top left of my desk, below the 3rd layer of dust.
+
+The EL display
+
+4_7904Electroluminescent displays are fascinating in my opinion, not only because they are clear from any viewing angle (180 degree viewing angle like OLED), they are also able to work in lot of environmental situations. Mine is a Planar EL320.240.36 from ebay.
+
+The challenging part of using this display is due to the fact it does not include a driver, this means you have to provide continuous pixel data on a 4bit data bus and also the horizontal and the vertical synchro signals. I found a small board with a RAIO8835 chip and some RAM, able to drive it. I tried without success to control the driver chip directly with the raspberry pi GPIO, via a level adapter (3.3 – 5v). Anyway, I realized I didn’t have enough knowledge to make a Linux driver redirecting the frame buffer to the RAIO8835 via it’s 8bit parallel interface.
+
+Ok, then, let’s dig into my memory, looking for old school lessons on Microchip PIC microcontrollers. I was able to send an image from the Raspberry to a PIC16F690 using the serial port, which controls the driver chip… It was, hum… slow. Indeed, serial port, even at 115200 Baud is nothing compare to the 320×240 pixels of the screen. But at least, I was satisfied to see something displayed. In particular after having read the RAIO8835 datasheet and spent hours configuring it… It took around one second to refresh the whole screen… and in pure monochrome.
+
+IMG_6841
+
+The FPGA
+
+Ok, do we want to drive slowly this nice screen in order to show useful information? Bah, it could be nice to have the full X desktop, as a standard HDMI screen, at 60fps, with some gray scale, and 3D ! (come on…) I didn’t find any chip driver that suits these requirements, “then move your a** and make your own”. That means, ouch… FPGA. A completely new field for me. I took some courses on CPLD years ago, but it’s all gone. Let’s start by choosing a dev board. Reading some reviews, roaming on the web… Ok, go for the Altera DE0-nano. Ah yes… And I need a fast level adapter between the DE0 3.3v and the 5v EL screen. Hum, let’s take some TI TXB0108. (gonna be hard to solder this translator on an adapter board!)
+
+IMG_6997
+
+After nights of learning the basics of Verilog (I had to choose, why not VHDL ? I don’t remember… ) I was able to make some working programs to drive directly my EL screen ! I was even able to generate a gray by flipping on/off pixels every frames. And at 100Hz ! FPGA is REALLY powerful. Well, so far so good… How I can now connect my lovely Raspberry to all this horse power ? TI gave me a solution (probably there are others). They have what they call a TFP401. This little guy is able to convert the three serial differential color channels of the DVI to 3 parallel 8bit ports. Let’s feed the beast FPGA with all this data! Hum, again it’ll be hard to solder the TFP401 package. Fortunately TI free samples give me two chips, two attempts.
+
+IMG_7346
+
+And there was light an image. After several iterations, my EL screen acts as DVI display. I skipped the part with the EDID eeprom to make it automatically recognized, as the Raspberry output can be configured manually. So I needed to specify a frame buffer of 320×240, and the proper HDMI mode. The FPGA makes the average of the 3 colors channels (red, green, blue), and generates ordered dithering to make gradients a bit better with the only 3 colors of the screen.
+
+https://code.google.com/p/dvi-el-display/wiki/Summary
+https://code.google.com/p/dvi-el-display/wiki/DE0nano
+
+The Geiger Counter 
+
+Another device gathering dust on the desk is a Geiger counter.  I got a board from www.mightyohm.com and made this serial Geiger counter. Not really useful you’ll tell me, but… Yes I think it’s cool. And even more so if we use it, let’s say, to record the data. I plugged it into the raspberry.
+
+I’m not too bad at Java programming, and I took the opportunity given by Oracle and their fast JVM to transfer my knowledge on to this project. Yes now we have an aim, a goal, let’s call this garbage connection a project. I used the nice Pi4J library and few dirty lines of java to make charts of background radiation over time. Nice.
+
+Conglomeration, weather station
+
+Like an archaeologist, step by step, going deeper and deeper into the sedimentation layers of… dust on this desk, let’s bring the small BMP085 sensor back to usefulness. Well, still using Pi4J, I have now two additional values to record, air pressure and temperature. The BMP085 is a crazy sensor IMO. Bosch provide a C code sample in their datasheet to convert raw data into temperature and pressure values. They use bit shifting and 16bit integer variables. Instead I decided to use the Java Float types and real multiplications/divisions. The result is amazing, I get the full resolution capabilities of the sensor. Of course it make sense, Bosch considers the value changes of 0.01 °C as noise, but experience shows it’s not completely the case ! Look at this data, the temperature went up because I put my hand 20 centimeters below the probe:
+
+BMP085
+
+It could be also nice to have outside temperature. Yes ! I found some Dallas 1wire digital sensors. There is this battery with a solar panel over here. And of course the PIC16F690 previously used, victim of the inefficiency of the solution. But powerful enough to get the temperature from the Dallas probe, and send it with a nRF24L01+ wireless module. And let’s add a photo-resistor, and connect the battery itself to one of the PIC ADC. Yet three additional values : Outside temperature, brightness and battery level.
+
+IMG_8445
+
+Scratching my head… The battery is discharging too fast. I optimized the PIC code to put everything in sleep mode for 5 seconds between measurement points. But still, during the day the solar panel is not able to recharge enough the battery. Four fancy blue leds indicate the battery level in front of the device. In fact they not only indicate, but more irradiate ! Soldering iron in one hand, greater resistor value in the other hand, and the power consumption of the thing is reduced !
+
+IMG_8446
+
+PiLogger
+
+It’s time to do some more serious Java programming. Let’s make abstraction for probes and a data channel class. Let’s print this data on a chart with different time scales (it looks cool on this EL screen !) and record the data on the SD card. Let’s put these charts online thanks Google Charts. :D
+
+https://code.google.com/p/pilogger/
+
+system_overview_en
+
+A case
+
+What I found in a trash can is a 19” rack. That’s a bit… big. Even with a small 12v power supply, two switching converters to have 5v and 3.3v, the Raspberry pi, a USB hub, the Geiger counter, the nRF wireless module, the EL screen and it’s FPGA driver, even with all of these, 19” is too big. Where is my hacksaw… Ah yes, there we are. Hum, aluminium is lightweight, but still !
+
+After few minutes hours of sportive sawing, I got a half 19” rack to put everything inside and wait for the girlfriend acceptance test :D
+
+IMG_20130926_083719_329
+
+IMG_8449
+
+Outlook
+
+I’m now waiting for an additional nRF24L01 module and sensors to add a few more data channels : Outside relative humidity, house electrical consumption, house heating system temperature, etc, etc
