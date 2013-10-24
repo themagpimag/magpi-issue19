@@ -1,0 +1,91 @@
+#Good King Wenceslas 
+
+speed = 0.5
+semibreve = 4 * speed
+minim = 2 * speed
+crotchet = 1 * speed
+
+5.times do
+	2.times do
+		play 55 
+		sleep crotchet
+		play 55
+		sleep crotchet
+		play 55
+		sleep crotchet
+		play 57
+		sleep crotchet
+		play 55
+		sleep crotchet
+		play 55
+		sleep crotchet
+		play 50 
+		sleep minim
+		play 52
+		sleep crotchet
+		play 50 
+		sleep crotchet
+		play 52 
+		sleep crotchet
+		play 54
+		sleep crotchet
+		play 55 
+		sleep minim
+		play 55
+		sleep minim
+	end
+	play 62
+	sleep crotchet
+	play 60
+	sleep crotchet
+	play 59
+	sleep crotchet
+	play 57
+	sleep crotchet
+	play 59 
+	sleep crotchet
+	play 57 
+	sleep crotchet
+	play 55
+	sleep minim
+	play 52
+	sleep crotchet
+	play 50
+	sleep crotchet
+	play 52
+	sleep crotchet
+	play 54
+	sleep crotchet
+	play 55
+	sleep minim
+	play 55
+	sleep minim
+	play 50
+	sleep crotchet
+	play 50 
+	sleep crotchet
+	play 52
+	sleep crotchet
+	play 54
+	sleep crotchet
+	play 55
+	sleep crotchet
+	play 55
+	sleep crotchet
+	play 57
+	sleep minim
+	play 62 
+	sleep crotchet
+	play 60
+	sleep crotchet
+	play 59
+	sleep crotchet
+	play 57
+	sleep crotchet
+	play 55
+	sleep minim
+	play 60
+	sleep minim
+	play 55
+	sleep semibreve
+end
