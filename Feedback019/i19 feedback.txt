@@ -1,0 +1,50 @@
+Hi guys,
+
+First off thank you for all your hard work on the Magpi magazine. You guys are doing a fantastic job!
+
+I have been working my way through some of the tutorials and it occurred to me that while each tutorial states which part it is (Part 1, Part 2 etc..) there is no way to know how far along the whole thing you are. I love the little banner you put in to indicate the difficulty level of each tutorial(Easy, Advanced, etc) and was wondering if you would consider doing something similar for the parts. A banner that states Part 1 of 3 or some such would help to keep track of how far along you are with the tutorial. Maybe next to the difficulty banner?
+
+Anyway, that's my 2 cents worth. 
+
+Thanks again for this brilliant resource.
+Roeland Schumacher
+
+
+
+I'm amazed at the work you have done over the past 18 issues and now with the back catalogue I thought there were enough Scratch projects to make a self contained guide.
+
+So, I pulled all the pages from the existing issues and packaged them into a new PDF.
+
+I've put it on Google Drive at the following link:
+https://drive.google.com/file/d/0B23BvTk93HRYV0JEZE5yeWo5MEE/edit?usp=sharing
+
+Again, thank you for the magazine.
+Albert
+
+
+
+I bought a Raspberry Pi a while ago, and other things got in the way of my plan for playing with it.  Now that winter is on the way and the evenings are drawing in, I have time to devote to returning to playing with my Raspberry Pi.  I have downloaded and read through some of the issues of your magazine, and really like the format and contents.
+
+I enjoy the regular columns and how they form a sequence from basic tasks to more challenging ones in each discipline (Scratch, Python, C, hardware hacking, etc.).  What would be really useful would be a page with a list of links to each article in a regular column in order, so that people in my position can work their way through the exercises and articles in order.  I imagine this would be useful to those people who have started with something easier (e.g. Scratch) and decide, having gained competence there, to “graduate” onto a more challenging discipline.
+
+Keep up the good work,
+Robin
+
+
+Great magazine, especially at the price!
+
+As an electronics engineer with a bit of a background in programming,  I was amazed when I saw the Raspberry Pi launched at such a low price.
+
+I am now spending all my spare time (which isn't that much) building bits and coding the Raspberry Pi.  Takes me back to the 80's, ZX80, Acorn Electron etc.
+
+Your magazine is providing loads of info. for me, as well as ideas and enthusiasm.  
+Sincere Thanks,
+Nigel
+
+
+Just wanted to inform you that the article (Pi Vision, Issue 18) looked great!
+
+My kids are proud.
+
+Many greetings,
+B.J. Rao
