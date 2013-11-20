@@ -230,15 +230,41 @@
             <ITEXT CH="The Pi Store content is divided into five categories; Games, Apps, Tutorials, Dev Tools and Media. Before we explore each of these there are some navigation tips that will help you find the content you want. "/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="In the Explore tab of the Pi Store there is an option to filter the content by Status and also an option to specify the sort order. If you want to explore content which is still work-in-progress then change the Status filter to &quot;In Progress&quot;. You can also set it to &quot;Show All&quot; to see all Pi Store content."/>
+            <ITEXT CH="In the "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="Explore"/>
+            <ITEXT CH=" tab of the Pi Store there is an option to filter the content by Status and also an option to specify the sort order. If you want to explore content which is still work-in-progress then change the Status filter to "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="In Progress"/>
+            <ITEXT CH=". You can also set it to "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="Show All"/>
+            <ITEXT CH=" to see all Pi Store content."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="There are many sort options but the most useful   are &quot;Most Played&quot;, &quot;Newest First&quot; and &quot;Top Rated&quot;. Note that currently the Pi Store does not store these settings so the next time you open the Pi Store the Status will likely be reset to &quot;Finished&quot; and the sort order will be by &quot;Price - Highest&quot;."/>
+            <ITEXT CH="There are many sort options but the most useful   are "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="Most Played"/>
+            <ITEXT CH=", "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="Newest First"/>
+            <ITEXT CH=" and "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="Top Rated"/>
+            <ITEXT CH=". Note that currently the Pi Store does not store these settings so the next time you open the Pi Store the Status will likely be reset to "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="Finished"/>
+            <ITEXT CH=" and the sort order will be reset to "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="Price - Highest"/>
+            <ITEXT CH="."/>
+            <para PARENT="Body text"/>
+            <para PARENT="Body text"/>
+            <ITEXT CH="Don't forget to tip!"/>
+            <para PARENT="Body title"/>
+            <para PARENT="Body text"/>
+            <ITEXT CH="When you receive good service you leave a tip. Almost everything in the Pi Store is free. If you enjoyed playing a game or found the content useful, consider showing your appreciation by leaving a tip for the developer. It's easy to do. In your library, select the title you want to tip then click "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="View Details"/>
+            <ITEXT CH=". From there click "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="11" CH="Tip this Project"/>
+            <ITEXT CH="."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
             <ITEXT CH="Games"/>
             <para PARENT="Body title"/>
-            <ITEXT CH="Not surprisingly, this is the largest category in the Pi Store"/>
+            <ITEXT CH="Surprisingly this is not the largest category in the Pi Store, but with 28 titles at the time of writing there is something for all gamers here."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
             <ITEXT CH="Apps"/>
@@ -248,24 +274,25 @@
             <para PARENT="Body text"/>
             <ITEXT CH="Tutorials"/>
             <para PARENT="Body title"/>
-            <para PARENT="Body text"/>
-            <ITEXT CH="????"/>
-            <para PARENT="Body text"/>
+            <ITEXT CH="The Tutorials category contains several very useful guides including the official Raspberry Pi Educational User Manual. Other guides include a tutorial on how to create database applications using SQL and Python plus a Python programming course with 17 lessons where you learn how to create a space invaders style game. "/>
             <para PARENT="Body text"/>
             <ITEXT CH="Dev Tools"/>
             <para PARENT="Body title"/>
-            <ITEXT CH="????"/>
+            <ITEXT CH="This is the smallest category in the Pi Store yet it contains useful titles such as collections of HUD overlays, animated sprites and sound effects/music for your Python and Scratch games... and of course all free to use."/>
+            <para PARENT="Body text"/>
+            <para PARENT="Body text"/>
+            <ITEXT CH="There is also the excellent Pi3D, a Python module that simplifies developing 3D worlds and provides access to the power of the Raspberry Pi GPU. It also includes 15 impressive demos."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
             <ITEXT CH="Media"/>
             <para PARENT="Body title"/>
-            <ITEXT CH="This is where you will find every issue of the first, and in my biased opinion the best, magazine for the Raspberry Pi... and of course it is free! There will typically be a short lag between The MagPi being released at the start of each month and it appearing in the Pi Store. That is because the Pi Store version is the same version that we use for creating the printed version of the magazine."/>
+            <ITEXT CH="This is where you will find every issue of the first, and in my biased opinion the best, magazine for the Raspberry Pi... and of course it is free! There will typically be a short lag between The MagPi being released at the start of each month and it appearing in the Pi Store. That is because the Pi Store version is the same version that we use for creating the printed version of the magazine so we are doubly thorough with the quality control."/>
             <para PARENT="Body text"/>
             <para PARENT="Body text"/>
             <ITEXT CH="Conclusion"/>
             <para PARENT="Body title"/>
             <para PARENT="Body text"/>
-            <ITEXT CH="With almost 2 million Raspberry Pis sold worldwide and the Pi Store being located on the desktop of Raspbian, it has the potential to be an incredible resource for the Raspberry Pi community. It is there for the benefit of the community, so go use it."/>
+            <ITEXT CH="With over 2 million Raspberry Pis sold worldwide and the Pi Store being located on the desktop of Raspbian, it has the potential to be an incredible resource for the Raspberry Pi community. It is there for the benefit of the community, so go use it."/>
             <trail PARENT="Body text"/>
             <PageItemAttributes/>
         </PAGEOBJECT>
@@ -352,7 +379,7 @@
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
-        <PAGEOBJECT OwnPage="1" PTYPE="2" XPOS="128.347086614173" YPOS="1266.0639326441" WIDTH="257.152923583984" HEIGHT="192.10972701351" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.232297130608838" LOCALSCY="0.232297130608838" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="1" TEXTFLOW="1" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="games.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 257.153 0 257.153 0 257.153 0 257.153 0 257.153 192.11 257.153 192.11 257.153 192.11 257.153 192.11 0 192.11 0 192.11 0 192.11 0 192.11 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 257.153 0 257.153 0 257.153 0 257.153 0 257.153 192.11 257.153 192.11 257.153 192.11 257.153 192.11 0 192.11 0 192.11 0 192.11 0 192.11 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT OwnPage="1" PTYPE="2" XPOS="128.347086614173" YPOS="1485.0639326441" WIDTH="257.152923583984" HEIGHT="192.10972701351" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.232297130608838" LOCALSCY="0.232297130608838" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="1" TEXTFLOW="1" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="games.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 257.153 0 257.153 0 257.153 0 257.153 0 257.153 192.11 257.153 192.11 257.153 192.11 257.153 192.11 0 192.11 0 192.11 0 192.11 0 192.11 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 257.153 0 257.153 0 257.153 0 257.153 0 257.153 192.11 257.153 192.11 257.153 192.11 257.153 192.11 0 192.11 0 192.11 0 192.11 0 192.11 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
