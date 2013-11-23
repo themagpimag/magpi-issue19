@@ -1,0 +1,24 @@
+#Good King Wenceslas 
+
+ 2.times do
+ 	play_pattern_timed [55,55,55,57,55,55],[0.5]
+ 	play 50 
+ 	sleep 1
+ 	play_pattern_timed [52,50,52,54],[0.5]
+ 	play 55 
+ 	sleep 1
+ 	play 55
+ 	sleep 1
+ end
+ play_pattern_timed [62,60,59,57,59,57],[0.5]
+ play 55
+ sleep 1
+ play_pattern_timed [52,50,52,54],[0.5]   
+ play_pattern_timed [55,55],[1]
+ play_pattern_timed [50,50,52,54,55,55],[0.5]
+ play 57
+ sleep 1
+ play_pattern_timed [62,60,59,57],[0.5]
+ play_pattern_timed [55,60],[1]
+ play 55
+ sleep 2
