@@ -135,10 +135,10 @@
             <ITEXT FONT="FreeSans Bold" CH="Paul Carpenter"/>
             <ITEXT CH=" - Tester"/>
             <para/>
-            <ITEXT FONT="FreeSans Bold" CH="Neil M"/>
+            <ITEXT FONT="FreeSans Bold" CH="Neil Matthews"/>
             <ITEXT CH=" - Tester / Proof Reading"/>
             <para/>
-            <ITEXT FONT="FreeSans Bold" CH="Marvin"/>
+            <ITEXT FONT="FreeSans Bold" CH="Nigel Curtis"/>
             <ITEXT CH=" - Proof Reading"/>
             <trail/>
             <PageItemAttributes/>
