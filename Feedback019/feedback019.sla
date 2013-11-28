@@ -150,7 +150,7 @@
             <ITEXT FONTSIZE="11" FCOLOR="White" FSHADE="100" CH="Nigel"/>
             <para PARENT="Body Text" ALIGN="2"/>
             <para PARENT="Body Text" ALIGN="2"/>
-            <ITEXT FONT="FreeSans Regular" FONTSIZE="11" FCOLOR="Cyan" FSHADE="100" CH="First off thank you for all your hard work on The MagPi magazine. You guys are doing a fantastic job!"/>
+            <ITEXT FONT="FreeSans Regular" FONTSIZE="11" FCOLOR="Cyan" FSHADE="100" CH="Thank you for all your hard work on The MagPi magazine. You guys are doing a fantastic job!"/>
             <para PARENT="Body Text"/>
             <para PARENT="Body Text" ALIGN="0"/>
             <ITEXT FONT="FreeSans Regular" FONTSIZE="11" FCOLOR="Cyan" FSHADE="100" CH="Thanks again for this brilliant resource"/>
@@ -183,7 +183,7 @@
             <ITEXT FONTSIZE="11" FCOLOR="Cyan" FSHADE="100" CH="Chad Murphy"/>
             <para ALIGN="2"/>
             <para ALIGN="2"/>
-            <ITEXT FONTSIZE="11" CH="Many thanks for your wonderful magazine. It's without question the 'must have' accessory to the Raspberry Pi."/>
+            <ITEXT FONTSIZE="11" CH="Many thanks for your wonderful magazine. It's without question the 'must have' accessory for the Raspberry Pi."/>
             <para ALIGN="3"/>
             <para ALIGN="2"/>
             <ITEXT FONTSIZE="11" CH="Martin Hodgson"/>
