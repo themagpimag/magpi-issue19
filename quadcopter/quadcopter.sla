@@ -265,111 +265,124 @@
             <ITEXT CH="Talking to Phoebe"/>
             <para PARENT="Body title"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="Whether Phoebe is autonomous or remote controlled someone needs to talk to her to tell her what to do.  To that end, Phoebe runs a wireless access point (WAP) so another computer can join her private network and either SSH in or provide remote control commands.  You can see how I did this at."/>
+            <ITEXT FONTSIZE="11" CH="Whether Phoebe is autonomous or remote controlled someone needs to talk to her to tell her what to do.  To that end, Phoebe runs a wireless access point (WAP) so another computer can join her private network and either SSH in or provide remote control commands.  You can see how I did this at "/>
+            <ITEXT FONTSIZE="11" FCOLOR="Blue" CH="http://blog.pistuffing.co.uk/???"/>
+            <ITEXT FONTSIZE="11" CH="."/>
+            <para PARENT="Body text" LINESP="15"/>
+            <ITEXT FONTSIZE="11" CH="For initial testing the WAP function isn’t necessary,  any household wireless network will do, but as your quadcopter comes to life you will want to be doing your testing away from animals, children and other valuables you don’t want damaged (like yourself). Having a WAP means you can take the testing out into the garden or local park or field."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="For initial testing, the WAP function isn’t necessary – any household wireless network will do, but as your quadcopter comes to life, you’ll want to be doing your testing away from animals / children and other valuables you don’t want damaged (like yourself), and having a WAP means you can take the testing out into the garden or local park or field."/>
-            <para PARENT="Body text" LINESP="15"/>
-            <para PARENT="Body text" LINESP="15"/>
-            <ITEXT CH="Presenting Phoebe’s Python Programming"/>
+            <ITEXT CH="Presenting Phoebe’s Python code"/>
             <para PARENT="Body title"/>
             <para PARENT="Body text"/>
-            <ITEXT FONTSIZE="11" CH="The final step is obviously the most important; once you have a physical quadcopter, with associated blades, motors, ESCs, power and circuitry, we use Python code to glue all the pieces together.  I’m not going to go into this blow by blow here as the code is available here, and it should be self-documenting – there are more lines of explanatory comments than there are lines of code actually doing something constructive!"/>
+            <ITEXT FONTSIZE="11" CH="The final step is obviously the most important; once you have a physical quadcopter with associated blades, motors, ESCs, power and circuitry, we use Python code to glue all the pieces together.  I’m not going to go into this blow by blow here as the code is available at "/>
+            <ITEXT FONTSIZE="11" FCOLOR="Blue" CH="https://github.com/PiStuffing/Quadcopter"/>
+            <ITEXT FONTSIZE="11" CH=" and it should be self-documenting. There are more lines of explanatory comments than there are lines of code actually doing something constructive!"/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="The I2C class provides a programming interface to read and write data from the sensors. Built on that, the MPU6050 class configures the sensors and then provides API access to reading the data, and converting the values from the sensor into meaningful values humans would understand (like degrees per second rotation or meters per second per second acceleration)."/>
+            <ITEXT FONTSIZE="11" CH="The I"/>
+            <ITEXT FONTSIZE="11" FEATURES="inherit superscript" CH="2"/>
+            <ITEXT FONTSIZE="11" CH="C class provides a programming interface to read and write data from the sensors. Built on that, the MPU6050 class configures the sensors and then provides API access to reading the data and converting the values from the sensor into meaningful values humans would understand (like degrees/sec for rotation or metres/sec"/>
+            <ITEXT FONTSIZE="11" FEATURES="inherit superscript" CH="2"/>
+            <ITEXT FONTSIZE="11" CH=" for acceleration)."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="The QUAD class handles the PWM for each blade handling initialization, and setting the PWM data to control the propeller blade spin speeds. The PID class is the jigsaw glue, and the core of the development and testing.  It’s the understanding of this which makes configuring a quadcopter both exciting and scary!  It’s worth an article in its own right – for now there’s a brief overview and what they do and how at the end."/>
+            <ITEXT FONTSIZE="11" CH="The QUADBLADE class handles the PWM for each blade handling initialization and setting the PWM data to control the propeller blade spin speeds. The PID class is the jigsaw glue and the core of the development and testing.  It is the understanding of this which makes configuring a quadcopter both exciting and scary!  It is worth an article in its own right – for now there is a brief overview of what they do and how at the end."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="There are utility functions for processing the startup command line parameters, signal handling (the panic button ctrl-C), and some shutdown code"/>
+            <ITEXT FONTSIZE="11" CH="There are utility functions for processing the startup command line parameters, signal handling (the panic button Ctrl-C) and some shutdown code"/>
             <ITEXT CH="."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="Last, but not least, there’s the big “while keep_looping:” loop which checks on what it should be doing (take-off, hover, land, etc), reads the sensors, runs the PIDs, updates the PWMs and returns to the start one hundred times a second!"/>
+            <ITEXT FONTSIZE="11" CH="Last, but not least, there is the big “while keep_looping:” loop which checks on what it should be doing (take-off, hover, land, etc), reads the sensors, runs the PIDs, updates the PWMs and returns to the start one hundred times a second!"/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT CH="The PID"/>
+            <ITEXT CH="PID"/>
             <para PARENT="Body title"/>
             <para PARENT="Body text"/>
-            <ITEXT FONTSIZE="11" CH="A PID is a relatively small, simple piece of code used to achieve quite a complex task: it is fed a “target” value and an “input” value.  The difference between these is the “error”.  The PID processes this “error”, and produces an “output” which aims to shrink the difference between “target” and “input” to zero.  It does this repeatedly constantly updating the “output”, yet without any idea of what “input”, “output” or “target” actually mean in it’s real world context as the core of a quadcopter: weight, gravity, wind strength, RC commands, location,  momentum, speed and all the other factors which are critical to a  quadcopters."/>
+            <ITEXT FONTSIZE="11" CH="The PID (Proportional, Integral, Differential) class is a relatively small, simple piece of code used to achieve quite a complex task. It is fed a “target” value and an “input” value.  The difference between these is the “error”. The PID processes this “error” and produces an “output” which aims to shrink the difference between the “target” and “input” to zero.  It does this repeatedly, constantly updating the “output”, yet without any idea of what “input”, “output” or “target” actually mean in its real world context as the core of a quadcopter: weight, gravity, wind strength, RC commands, location,  momentum, speed and all the other factors which are critical to quadcopters."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="In the context of a quadcopter, “target” is a flight command – hover, take-off, land, move forwards; “input” is sensor data; the “output” is the PWM pulse size for the motors."/>
+            <ITEXT FONTSIZE="11" CH="In the context of a quadcopter, “target” is a flight command (hover, take-off, land, move forwards), “input” is sensor data and “output” is the PWM pulse size for the motors."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
             <ITEXT FONTSIZE="11" CH="Phoebe has 4 PIDs running currently – pitch, roll, yaw and vertical speed – these are the bare minimum needed for an orderly takeoff, hover and landing."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="The PIDs magic is that it doesn’t have any complex math(s) connecting power, weight, blade spin rates, gravity, wind-speed, imbalanced frame, poor center of gravity or the many other factors that perturb the perfect flight modelled by a pure math(s) equation."/>
+            <ITEXT FONTSIZE="11" CH="The PID's magic is that it does not contain any complex calculations connecting power, weight, blade spin rates, gravity, wind-speed, imbalanced frame, poor center of gravity or the many other factors that perturb the perfect flight modelled by a pure mathematical equation."/>
+            <para PARENT="Body text" LINESP="15"/>
+            <ITEXT FONTSIZE="11" CH="Instead it does this by repeated, rapid re-estimation of what the current best guess “output” must be based only on the “target” and the “input”."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="Instead, it does this by repeated rapid reestimation of what the current best guess “output” must be based only on the “target” and the “input”."/>
-            <para PARENT="Body text" LINESP="15"/>
-            <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="The “P” of PID stands for proportional – each time the PID is called, its “output” is just some factor times the “error” – in quadcopter context, this corrects immediate problems like this is the direct approach to keeping the absolute “error” to zero."/>
-            <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="    "/>
-            <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="The “I” of PID stands for integral – each time the PID is called, the “error” is added to a grand total of errors to produce an output with the intent that over time, the total “error” remains at zero – in quadcopter context, this aims to produce long term stability deals with long term problems like imbalance in the physical frame, motor and blade power, and wind."/>
+            <ITEXT FONTSIZE="11" CH="The “P” of PID stands for proportional – each time the PID is called its “output” is just some factor times the “error” – in a quadcopter context, this corrects immediate problems and is the direct approach to keeping the absolute “error” to zero."/>
             <para PARENT="Body text" LINESP="15"/>
             <ITEXT FONTSIZE="11" CH="    "/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="The “D” of PID stands for differential – each time the PID is called, the difference in error since last time is used to generate the output – if the “error” is worse than last time, the PID “D” output is higher; this aims to produce a predictive approach to error correction."/>
+            <ITEXT FONTSIZE="11" CH="The “I” of PID stands for integral – each time the PID is called the “error” is added to a grand total of errors to produce an output with the intent that over time, the total “error” remains at zero – in a quadcopter context, this aims to produce long term stability by dealing with problems like imbalance in the physical frame, motor and blade power plus wind."/>
+            <para PARENT="Body text" LINESP="15"/>
+            <ITEXT FONTSIZE="11" CH="    "/>
+            <para PARENT="Body text" LINESP="15"/>
+            <ITEXT FONTSIZE="11" CH="The “D” of PID stands for differential – each time the PID is called the difference in error since last time is used to generate the output – if the “error” is worse than last time, the PID “D” output is higher. This aims to produce a predictive approach to error correction."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="The results of all three are added together to give an overall output, and then depending on the purpose of the PID, applied to each of the blades appropriately."/>
+            <ITEXT FONTSIZE="11" CH="The results of all three are added together to give an overall output and then, depending on the purpose of the PID, applied to each of the blades appropriately."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="It sounds like magic doesn’t it?  And to some extent it is!  You see every PID has three configurable gain factors configured for it, one each for “P”, “I”, and “D”.  So in my case, I have twelve different gain factors.  These are magic numbers, which if too small do nothing, if too large cause chaos, and if applied wrongly cause catastrophe.  My next article will cover this in much more detail, both how they work and how to tune the gains; in the meantime, get on with building your own quadcopter – the PID gains in the code I’ve supplied should be a reasonable starting point for yours."/>
-            <para PARENT="Body text" LINESP="15"/>
-            <para PARENT="Body text" LINESP="15"/>
+            <ITEXT FONTSIZE="11" CH="It sounds like magic... and to some extent it is! Every PID has three configurable gain factors configured for it, one each for “P”, “I” and “D”. So in my case I have twelve different gain factors.  These are magic numbers, which if too small do nothing, if too large cause chaos and if applied wrongly cause catastrophe.  My next article will cover this in much more detail, both how they work and how to tune the gains. In the meantime, use the bill of materials on page 5 and get on with building your own quadcopter. The PID gains in the code I’ve supplied should be a reasonable starting point for yours."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
             <ITEXT CH="Flying Phoebe"/>
             <para PARENT="Body title"/>
             <para PARENT="Body text"/>
-            <ITEXT FONTSIZE="11" CH="At the moment, it’s simple but dangerous!"/>
+            <ITEXT FONTSIZE="11" CH="At the moment, it is simple but dangerous!"/>
             <para PARENT="Body text" LINESP="15"/>
             <ITEXT FONTSIZE="11" CH="    "/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="Put Phoebe on the ground, place a flat surface across her propeller tips, put a spirit level on that surface, and make sure she’s on absolute horizontal by putting padding under her feet – this is absolutely critical if you don’t want her to drift in flight – we’ll fix this in another article with some more PIDs"/>
+            <ITEXT FONTSIZE="11" CH="Put Phoebe on the ground, place a flat surface across her propeller tips, put a spirit level on that surface and make sure she’s on absolute horizontal by putting padding under her feet – this is absolutely critical if you don’t want her to drift in flight – we’ll fix this in another article with some more PIDs"/>
             <ITEXT CH="."/>
             <para PARENT="Body text" LINESP="15"/>
             <ITEXT FONTSIZE="11" CH="  "/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="Connect the LiPo battery – the ESCs will start beeping loudly – ignore them"/>
+            <ITEXT FONTSIZE="11" CH="Connect the LiPo battery. The ESCs will start beeping loudly – ignore them"/>
+            <ITEXT CH="."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
             <ITEXT FONTSIZE="11" CH="Wait until the WiFi dongle starts to flash – that means Phoebe’s WAP is working"/>
+            <ITEXT CH="."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="Connect via SSH / rlogin from a client – another Raspberry Pi, iPad etc who’ve joined Phoebe’s network"/>
-            <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="    cd to the directory you’ve placed Phoebe’s code"/>
-            <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="    Run"/>
+            <ITEXT FONTSIZE="11" CH="Connect via SSH / rlogin from a client such as another Raspberry Pi, iPad etc. who you have joined to Phoebe’s network"/>
+            <ITEXT CH="."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH=" sudo python ./phoebe.py -c"/>
+            <ITEXT FONTSIZE="11" CH="Use the "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="cd"/>
+            <ITEXT FONTSIZE="11" CH=" command to change to the directory where you placed Phoebe’s code"/>
+            <ITEXT CH=". Then enter:"/>
+            <para PARENT="Body text" LINESP="15"/>
+            <para PARENT="Body text" LINESP="15"/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH=" sudo python ./phoebe.py -c"/>
             <para PARENT="Code" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH=" sudo python ./phoebe.py -c -t 550 -v"/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH=" sudo python ./phoebe.py -c -t 550 -v"/>
             <para PARENT="Code" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="    -c calibrates the sensors to the flat surface she’s on"/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="-c"/>
+            <ITEXT FONTSIZE="11" CH=" calibrates the sensors to the flat surface she’s on"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="  -t 550 sets up the blades to just under take-off "/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="-t"/>
+            <ITEXT FONTSIZE="11" CH=" 550 sets up the blades to just under take-off "/>
             <tab FONTSIZE="11"/>
             <ITEXT FONTSIZE="11" CH="speed"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="    -v runs the video camera while she’s in flight."/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH="-v"/>
+            <ITEXT FONTSIZE="11" CH=" runs the video camera while she’s in flight."/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
-            <ITEXT FONTSIZE="11" CH="There are other options you can find by just typing"/>
+            <ITEXT FONTSIZE="11" CH="There are other options. You can find them by entering"/>
+            <ITEXT CH=":"/>
             <para PARENT="Body text" LINESP="15"/>
             <para PARENT="Body text"/>
-            <ITEXT FONTSIZE="11" CH=" sudo python ./phoebe.py"/>
+            <ITEXT FONT="Monaco Regular" FONTSIZE="10" CH=" sudo python ./phoebe.py"/>
             <para PARENT="Code" LINESP="15"/>
             <para PARENT="Body text" LINESP="15"/>
             <ITEXT FONTSIZE="11" CH="Enjoy, but be careful"/>
@@ -460,19 +473,19 @@
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
-        <PAGEOBJECT OwnPage="2" PTYPE="2" XPOS="128.347086614173" YPOS="1860.07283464567" WIDTH="256.402913385827" HEIGHT="175.5" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.162" LOCALSCY="0.162" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="1" TEXTFLOW="1" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="DSC00318.jpg" PFILE2="" PFILE3="" PRFILE="Embedded sRGB IEC61966-2.1" EPROF="Embedded sRGB IEC61966-2.1" IRENDER="0" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.403 0 256.403 0 256.403 0 256.403 0 256.403 175.5 256.403 175.5 256.403 175.5 256.403 175.5 0 175.5 0 175.5 0 175.5 0 175.5 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.403 0 256.403 0 256.403 0 256.403 0 256.403 175.5 256.403 175.5 256.403 175.5 256.403 175.5 0 175.5 0 175.5 0 175.5 0 175.5 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT OwnPage="2" PTYPE="2" XPOS="128.347086614173" YPOS="1905.42716535433" WIDTH="256.402913385827" HEIGHT="175.5" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.162" LOCALSCY="0.162" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="1" TEXTFLOW="1" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="DSC00318.jpg" PFILE2="" PFILE3="" PRFILE="Embedded sRGB IEC61966-2.1" EPROF="Embedded sRGB IEC61966-2.1" IRENDER="0" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.403 0 256.403 0 256.403 0 256.403 0 256.403 175.5 256.403 175.5 256.403 175.5 256.403 175.5 0 175.5 0 175.5 0 175.5 0 175.5 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.403 0 256.403 0 256.403 0 256.403 0 256.403 175.5 256.403 175.5 256.403 175.5 256.403 175.5 0 175.5 0 175.5 0 175.5 0 175.5 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
-        <PAGEOBJECT OwnPage="3" PTYPE="6" XPOS="411" YPOS="3058.41732283466" WIDTH="255.935433070867" HEIGHT="42" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Theme" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="20" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 255.935 0 255.935 0 255.935 0 255.935 0 255.935 42 255.935 42 255.935 42 255.935 42 0 42 0 42 0 42 0 42 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 255.935 0 255.935 0 255.935 0 255.935 0 255.935 42 255.935 42 255.935 42 255.935 42 0 42 0 42 0 42 0 42 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="12" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT OwnPage="3" PTYPE="6" XPOS="411" YPOS="2967.70866141734" WIDTH="255.935433070867" HEIGHT="42" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Theme" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="20" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 255.935 0 255.935 0 255.935 0 255.935 0 255.935 42 255.935 42 255.935 42 255.935 42 0 42 0 42 0 42 0 42 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 255.935 0 255.935 0 255.935 0 255.935 0 255.935 42 255.935 42 255.935 42 255.935 42 0 42 0 42 0 42 0 42 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="12" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
-        <PAGEOBJECT OwnPage="3" PTYPE="6" XPOS="411.00000002126" YPOS="3206.41732283466" WIDTH="255.9354331" HEIGHT="30.0629921251893" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Theme" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="20" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 255.935 0 255.935 0 255.935 0 255.935 0 255.935 30.063 255.935 30.063 255.935 30.063 255.935 30.063 0 30.063 0 30.063 0 30.063 0 30.063 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 255.935 0 255.935 0 255.935 0 255.935 0 255.935 30.063 255.935 30.063 255.935 30.063 255.935 30.063 0 30.063 0 30.063 0 30.063 0 30.063 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="12" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT OwnPage="3" PTYPE="6" XPOS="411.00000002126" YPOS="3129.8818897638" WIDTH="255.9354331" HEIGHT="30.0629921251893" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Theme" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="20" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 255.935 0 255.935 0 255.935 0 255.935 0 255.935 30.063 255.935 30.063 255.935 30.063 255.935 30.063 0 30.063 0 30.063 0 30.063 0 30.063 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 255.935 0 255.935 0 255.935 0 255.935 0 255.935 30.063 255.935 30.063 255.935 30.063 255.935 30.063 0 30.063 0 30.063 0 30.063 0 30.063 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="12" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
-        <PAGEOBJECT OwnPage="3" PTYPE="2" XPOS="410.532519670867" YPOS="3281.49905509921" WIDTH="256.4029134" HEIGHT="169.7374803" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="0" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.162" LOCALSCY="0.162" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="1" TEXTFLOW="1" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="DSC00335.jpg" PFILE2="" PFILE3="" PRFILE="Embedded sRGB IEC61966-2.1" EPROF="Embedded sRGB IEC61966-2.1" IRENDER="0" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.403 0 256.403 0 256.403 0 256.403 0 256.403 169.737 256.403 169.737 256.403 169.737 256.403 169.737 0 169.737 0 169.737 0 169.737 0 169.737 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.403 0 256.403 0 256.403 0 256.403 0 256.403 169.737 256.403 169.737 256.403 169.737 256.403 169.737 0 169.737 0 169.737 0 169.737 0 169.737 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT OwnPage="3" PTYPE="2" XPOS="410.532519670867" YPOS="3261.65653541417" WIDTH="256.4029134" HEIGHT="169.7374803" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="0" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.162" LOCALSCY="0.162" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="1" TEXTFLOW="1" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="DSC00335.jpg" PFILE2="" PFILE3="" PRFILE="Embedded sRGB IEC61966-2.1" EPROF="Embedded sRGB IEC61966-2.1" IRENDER="0" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 256.403 0 256.403 0 256.403 0 256.403 0 256.403 169.737 256.403 169.737 256.403 169.737 256.403 169.737 0 169.737 0 169.737 0 169.737 0 169.737 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 256.403 0 256.403 0 256.403 0 256.403 0 256.403 169.737 256.403 169.737 256.403 169.737 256.403 169.737 0 169.737 0 169.737 0 169.737 0 169.737 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
@@ -481,6 +494,10 @@
             <PageItemAttributes/>
         </PAGEOBJECT>
         <PAGEOBJECT OwnPage="1" PTYPE="4" XPOS="409.5" YPOS="1553.25" WIDTH="163.886459350586" HEIGHT="16.5" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="1" ANTYPE="11" ANACTION="" ANEACT="" ANXACT="" ANDACT="" ANFOACT="" ANBLACT="" ANKACT="" ANFACT="" ANVACT="" ANCACT="" ANEXTERN="http://blog.pistuffing.co.uk/?p=706" ANZIEL="1" ANACTYP="8" ANTOOLTIP="" ANBWID="1" ANBSTY="0" ANFEED="1" ANFLAG="0" ANFONT="4" ANFORMAT="0" ANROLL="" ANDOWN="" ANVIS="0" ANMC="-1" ANCHK="0" ANAA="0" ANCHKS="0" ANBCOL="Black" ANHTML="0" ANICON="0" ANPLACE="1" ANSCALE="0" ANNAME="Text55" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 163.886 0 163.886 0 163.886 0 163.886 0 163.886 16.5 163.886 16.5 163.886 16.5 163.886 16.5 0 16.5 0 16.5 0 16.5 0 16.5 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 163.886 0 163.886 0 163.886 0 163.886 0 163.886 16.5 163.886 16.5 163.886 16.5 163.886 16.5 0 16.5 0 16.5 0 16.5 0 16.5 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="2" PTYPE="4" XPOS="189" YPOS="2318.25" WIDTH="195.75" HEIGHT="18.2860622406006" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="1" ANTYPE="11" ANACTION="" ANEACT="" ANXACT="" ANDACT="" ANFOACT="" ANBLACT="" ANKACT="" ANFACT="" ANVACT="" ANCACT="" ANEXTERN="https://github.com/PiStuffing/Quadcopter" ANZIEL="2" ANACTYP="8" ANTOOLTIP="" ANBWID="1" ANBSTY="0" ANFEED="1" ANFLAG="0" ANFONT="4" ANFORMAT="0" ANROLL="" ANDOWN="" ANVIS="0" ANMC="-1" ANCHK="0" ANAA="0" ANCHKS="0" ANBCOL="Black" ANHTML="0" ANICON="0" ANPLACE="1" ANSCALE="0" ANNAME="Text55" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 195.75 0 195.75 0 195.75 0 195.75 0 195.75 18.2861 195.75 18.2861 195.75 18.2861 195.75 18.2861 0 18.2861 0 18.2861 0 18.2861 0 18.2861 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 195.75 0 195.75 0 195.75 0 195.75 0 195.75 18.2861 195.75 18.2861 195.75 18.2861 195.75 18.2861 0 18.2861 0 18.2861 0 18.2861 0 18.2861 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="6" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <trail/>
             <PageItemAttributes/>
         </PAGEOBJECT>
