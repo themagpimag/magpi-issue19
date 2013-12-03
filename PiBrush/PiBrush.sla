@@ -504,14 +504,6 @@
             <para PARENT="Code"/>
             <para PARENT="Body text"/>
             <ITEXT CH="If we've travelled further than the expected paint droplet seperation according to our, er, precise simulation, we need to draw a paint droplet! We calculate the amount of paint that was in the droplet arbitrarily as the acceleration times four, squared, times π (pi). (Area of a circle formula.) This is subtracted from P, the paint on the paintbrush variable. The paint droplet actually drawn on the screen is done, assuming they're cricles, with the Pygame function draw.circle(). We're drawing on the screen, in our random color at the paintbrush position (BX, BY). A*45 is the paint droplet radius, with 45 as another scaling factor."/>
-            <para PARENT="Body text"/>
-            <para PARENT="Body text"/>
-            <ITEXT CH="Footnotes"/>
-            <para PARENT="Body title"/>
-            <para PARENT="Body text"/>
-            <ITEXT CH="The Pi isn't actually open hardware at present, but it does run on open source software."/>
-            <para PARENT="Body text"/>
-            <ITEXT CH="Two great books with the same name document this movement: the fictional Makers by Cory Doctorow, and the non-fiction Makers by Chris Anderson."/>
             <trail PARENT="Body text"/>
             <PageItemAttributes/>
         </PAGEOBJECT>
